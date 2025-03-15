@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Student Dashboard</title>
+   <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header>
+   <div class="header-content">
+      <div class="logo">
+         <img src="fuaast.png" alt="FUAAST Logo">
+      </div>
+      <h1>Welcome, <%= name %> Student ID: <%= studentID %></h1>
+      <nav>
+         <a href="javascript:void(0);" onclick="showSection('profile')">My Profile</a>
+         <a href="javascript:void(0);" onclick="showSection('registration')">Course Registration</a>
+         <a href="/dashboard/logout">Logout</a>
+      </nav>
+   </div>
+</header>
+
+<section id="profile" class="content-section">
+   <div class="profile-details">
+      <div class="profile-item"><strong> Name: <%=name %></strong> </div>
+      <div class="profile-item"><strong> Student ID: <%=studentID %> </strong> </div>
+      <div class="profile-item"><strong> Phone: <%=phone %> </strong> </div>
+      <div class="profile-item"><strong> Permanent Address:<%=address %></strong> </div>
+      <div class="profile-item"><strong> Father's Name: <%=fathername %> </strong> </div>
+
+   </section>
+
+<section id="registration" class="content-section">
+ 
+   <form action="/courses/register" method="post">
+
+      <label for="course1"> Course 1:</label>
+      <select id="course1" name="course1" required>
+         <option value="">Select Course</option>
+         <option value="ap"> Applied Physics</option>
+         <option value="ict"> ICT </option>
+         <option value="pf"> Programming Fundamentals </option>
+         <option value="cal"> Calculus 1</option>
+      </select>
+
+
+      <label for="course2"> Course 2:</label>
+      <select id="course2" name="course2" required>
+         <option value="">Select Course</option>
+         <option value="ap"> Applied Physics</option>
+         <option value="ict"> ICT </option>
+         <option value="pf"> Programming Fundamentals </option>
+         <option value="cal"> Calculus 1</option>
+      </select>
+
+      <label for="course3"> Course 3:</label>
+      <select id="course3" name="course3" required>
+         <option value="">Select Course</option>
+         <option value="ap"> Applied Physics</option>
+         <option value="ict"> ICT </option>
+         <option value="pf"> Programming Fundamentals </option>
+         <option value="cal"> Calculus 1</option>
+      </select>
+
+      <label for="course4"> Course 4:</label>
+      <select id="course4" name="course4" required>
+         <option value="">Select Course</option>
+         <option value="ap"> Applied Physics</option>
+         <option value="ict"> ICT </option>
+         <option value="pf"> Programming Fundamentals </option>
+         <option value="cal"> Calculus 1</option>
+      </select>
+
+      <button type="submit">Register</button>
+
+ </form>
+
+
+</section>
+
+<script>
+function showSection(sectionName) {
+
+   const sections = document.querySelectorAll('.content-section');
+   
+
+   sections.forEach((section) => {
+      section.style.display = 'none';
+   });
+   
+  
+   const selectedSection = document.getElementById(sectionName);
+   if (selectedSection) {
+      selectedSection.style.display = 'block';
+   }
+
+  
+ 
+   const activeLink = document.querySelector(`nav a[onclick="showSection('${sectionName}')"]`);
+   if (activeLink) {
+      activeLink.classList.add('active');
+   }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+   showSection('profile');
+});
+</script>
+
+</body>
+</html>

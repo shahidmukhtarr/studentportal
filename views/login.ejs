@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Student Login </title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+
+
+    <div class="title">
+        <h1> Student Login </h1>
+        
+    </div>
+    
+
+    <form action="/auth/login" method="post">
+        <input type="text" name="studentID" placeholder="Student ID" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="/auth/register">Register here</a></p>
+        <p> <a href="/auth/reset"> Reset Password </a> </p>
+        
+    </form>
+
+</body>
+</html>

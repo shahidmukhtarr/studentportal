@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/reset.css">
+</head>
+<body>
+   
+    <div class="title">
+        <h1> Student Login </h1>
+        
+    </div>
+
+    <form action="/auth/reset" method="post">
+        <input type="text" name="studentID" placeholder="Student ID" required>
+        <input type="password" name="newpassword" placeholder="New Password" required>
+        <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+        <button type="submit">Reset Password</button>
+       <p> <a href="/auth/login"> Go Back To Login </a> </p>
+    </form>
+</body>
+</html>
